@@ -3,153 +3,435 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politica de Privacidad - Open</title>
+  <meta name="description" content="Politica de privacidad publica de Open para iOS, Android y revisiones en Apple App Store y Google Play Console.">
+  <meta name="theme-color" content="#123b2f">
+  <title>Politica de Privacidad | Open</title>
   <style>
     :root {
-      --bg: #f6f7f3;
-      --surface: #ffffff;
-      --text: #16202a;
-      --muted: #556270;
-      --accent: #e76f51;
-      --border: #e6e8eb;
+      --ink: #13231e;
+      --muted: #52625b;
+      --brand: #123b2f;
+      --brand-soft: #e3eee8;
+      --accent: #d96f32;
+      --accent-soft: #fff0e7;
+      --paper: #f3efe6;
+      --card: rgba(255, 255, 255, 0.86);
+      --line: rgba(19, 35, 30, 0.12);
+      --shadow: 0 24px 56px rgba(19, 35, 30, 0.14);
+      --radius: 24px;
+      --max: 1020px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: linear-gradient(180deg, #fff8f3 0%, var(--bg) 100%);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 64px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 18px 48px rgba(22, 32, 42, 0.08);
-    }
-
-    h1, h2 {
-      line-height: 1.2;
-      margin-top: 0;
-      color: var(--text);
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 28px;
-      margin-bottom: 8px;
-    }
-
-    p, li {
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    .meta {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    ul {
-      padding-left: 22px;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(217,111,50,0.1), transparent 28%),
+        radial-gradient(circle at top right, rgba(18,59,47,0.16), transparent 25%),
+        linear-gradient(180deg, #f7f3ea 0%, #f0ece3 100%);
+      line-height: 1.72;
     }
 
     a {
-      color: var(--accent);
+      color: var(--brand);
     }
 
-    .note {
-      margin-top: 28px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--accent);
-      background: #fff5ef;
-      border-radius: 12px;
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(243, 239, 230, 0.86);
+      border-bottom: 1px solid rgba(19, 35, 30, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand) 0%, #1b6a54 100%);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(18, 59, 47, 0.22);
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
       color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(18, 59, 47, 0.08);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .hero {
+      padding: 54px 0 18px;
+    }
+
+    .hero-card,
+    .content-card,
+    .sidebar-card {
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 14ch;
+    }
+
+    .lead,
+    .meta {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 65ch;
+      font-size: 1.03rem;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 20px;
+      padding: 22px 0 52px;
+    }
+
+    .content-card {
+      padding: 28px;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .sidebar-card {
+      padding: 22px;
+    }
+
+    h2 {
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .callout {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(217, 111, 50, 0.16);
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(18,59,47,0.08);
+      color: var(--brand);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    .footer {
+      padding: 0 0 46px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner,
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-card,
+      .content-card,
+      .sidebar-card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="card">
-      <h1>Politica de Privacidad de Open</h1>
-      <p class="meta">Ultima actualizacion: 2 de mayo de 2026</p>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="open_corporate_public.html">
+        <span class="brand-mark">O</span>
+        <span>Open</span>
+      </a>
+      <nav class="nav" aria-label="Legal">
+        <a href="open_corporate_public.html">Sitio corporativo</a>
+        <a href="#datos">Datos</a>
+        <a href="#eliminacion">Eliminacion</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-      <h2>1. Responsable del tratamiento</h2>
-      <p>Open es responsable del tratamiento de los datos personales recolectados a traves de la aplicacion.</p>
-      <p>Canal de contacto para privacidad, consultas y solicitudes de eliminacion de datos: <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a>.</p>
+  <main class="shell">
+    <section class="hero">
+      <article class="hero-card">
+        <span class="eyebrow">Open | Politica publica de privacidad</span>
+        <h1>Tratamos datos personales para operar Open de forma segura, funcional y transparente.</h1>
+        <p class="lead">
+          Esta politica aplica a la aplicacion Open distribuida en iOS y Android, asi como a sus servicios asociados,
+          y esta redactada para cumplir con los criterios de revision habituales de Apple App Store y Google Play Console.
+        </p>
+        <p class="meta">Ultima actualizacion: 14 de mayo de 2026</p>
+      </article>
+    </section>
 
-      <h2>2. Que informacion recopilamos</h2>
-      <p>Podemos recopilar las siguientes categorias de informacion, segun el uso que cada persona haga de la aplicacion:</p>
-      <ul>
-        <li>Datos de registro y cuenta, como nombre, correo electronico y numero de telefono.</li>
-        <li>Datos de autenticacion e identificadores asociados al acceso con correo o proveedores autorizados.</li>
-        <li>Ubicacion aproximada o precisa, si el usuario concede el permiso, para mostrar aliados, comercios y servicios cercanos.</li>
-        <li>Informacion tecnica del dispositivo y de la aplicacion, como sistema operativo, idioma, identificadores tecnicos y token de notificaciones.</li>
-        <li>Actividad dentro de la app asociada a solicitudes, reservas, pedidos, soporte y navegacion.</li>
-        <li>Imagenes o archivos que la persona usuaria cargue voluntariamente.</li>
-      </ul>
+    <section class="layout">
+      <article class="content-card">
+        <h2 id="responsable">1. Responsable del tratamiento</h2>
+        <p>
+          Open es responsable del tratamiento de los datos personales recolectados a traves de la aplicacion y de los flujos operativos asociados al servicio.
+        </p>
 
-      <h2>3. Para que usamos la informacion</h2>
-      <ul>
-        <li>Crear y administrar cuentas de usuario.</li>
-        <li>Autenticar sesiones y proteger el acceso.</li>
-        <li>Mostrar contenido, aliados y comercios cercanos o relevantes.</li>
-        <li>Procesar solicitudes, reservas, pedidos y mensajes de soporte.</li>
-        <li>Enviar notificaciones operativas o relacionadas con la cuenta.</li>
-        <li>Mejorar la seguridad, estabilidad y funcionamiento de la aplicacion.</li>
-        <li>Cumplir obligaciones legales o atender requerimientos validos de autoridad competente.</li>
-      </ul>
+        <h2 id="datos">2. Datos que podemos recopilar</h2>
+        <p>Segun la funcionalidad utilizada, Open puede tratar las siguientes categorias de informacion:</p>
+        <ul>
+          <li>Datos de cuenta y registro, como nombre, correo electronico, telefono y rol dentro de la plataforma.</li>
+          <li>Datos de autenticacion y sesion, incluidos tokens tecnicos, identificadores y evidencias de acceso necesarias para proteger la cuenta.</li>
+          <li>Direccion de entrega, ciudad, notas operativas y otra informacion que la persona usuaria ingrese para pedidos, reservas o solicitudes.</li>
+          <li>Ubicacion aproximada o precisa cuando el permiso es otorgado, con el fin de mostrar aliados o servicios cercanos y apoyar flujos operativos.</li>
+          <li>Informacion tecnica del dispositivo y de la app, como sistema operativo, idioma, identificadores tecnicos y token de notificaciones.</li>
+          <li>Actividad relacionada con pedidos, reservas, solicitudes, soporte, estados transaccionales y navegacion dentro de la app.</li>
+          <li>Imagenes o archivos cargados voluntariamente para soporte, comprobantes o evidencia dentro de determinados flujos.</li>
+        </ul>
 
-      <h2>4. Con quien compartimos la informacion</h2>
-      <p>No vendemos datos personales.</p>
-      <p>Podemos compartir informacion cuando sea necesario para prestar el servicio o cumplir obligaciones legales, por ejemplo con aliados o comercios vinculados a una solicitud o pedido, proveedores de infraestructura, autenticacion, almacenamiento, mensajeria o mapas, y autoridades o terceros legitimados cuando exista una obligacion legal.</p>
-      <p>Si alguna funcionalidad de pago de terceros llegara a estar habilitada en una version especifica de la app o del servicio, la informacion estrictamente necesaria para procesar ese flujo podria tratarse conforme a las politicas del proveedor correspondiente.</p>
+        <h2>3. Finalidades del tratamiento</h2>
+        <ul>
+          <li>Crear, administrar y proteger cuentas de usuario.</li>
+          <li>Autenticar sesiones y prevenir accesos no autorizados.</li>
+          <li>Procesar pedidos, reservas, pagos, comprobantes y solicitudes operativas.</li>
+          <li>Mostrar comercios, aliados o servicios cercanos y mejorar la experiencia contextual dentro de la plataforma.</li>
+          <li>Enviar notificaciones sobre estados de pedidos, solicitudes, soporte o eventos relevantes de la cuenta.</li>
+          <li>Mejorar seguridad, estabilidad, rendimiento y calidad del servicio.</li>
+          <li>Cumplir obligaciones legales, regulatorias o requerimientos validos de autoridad competente.</li>
+        </ul>
 
-      <h2>5. Servicios de terceros</h2>
-      <p>La aplicacion puede utilizar servicios de terceros como Google Firebase, Google Maps Platform y Google Sign-In. Estos terceros pueden tratar cierta informacion conforme a sus propias politicas de privacidad.</p>
+        <h2>4. Base de uso y comparticion</h2>
+        <p>
+          No vendemos datos personales. Podemos compartir informacion cuando sea estrictamente necesario para operar el servicio,
+          por ejemplo con aliados o comercios involucrados en una solicitud, con proveedores de infraestructura, mensajeria,
+          autenticacion, mapas, almacenamiento o analitica operativa, o cuando exista una obligacion legal aplicable.
+        </p>
 
-      <h2>6. Permisos del dispositivo</h2>
-      <p>La aplicacion puede solicitar permisos como ubicacion, notificaciones y acceso a camara, fotos o archivos cuando la persona usuaria decide utilizar esas funciones.</p>
+        <h2>5. Servicios de terceros</h2>
+        <p>
+          Open puede integrarse con terceros como Google Firebase, Google Sign-In, Google Maps Platform, servicios de almacenamiento,
+          notificaciones push y pasarelas de pago. Esos terceros pueden tratar cierta informacion conforme a sus propias politicas.
+        </p>
 
-      <h2>7. Conservacion de datos</h2>
-      <p>Conservamos la informacion durante el tiempo necesario para operar la aplicacion, atender soporte, resolver controversias, mantener la seguridad del servicio y cumplir obligaciones legales.</p>
+        <h2>6. Permisos del dispositivo</h2>
+        <p>
+          La aplicacion puede solicitar permisos de ubicacion, notificaciones, camara, fotos o archivos cuando la persona usuaria decide utilizar esas funciones.
+          Los permisos no se activan automaticamente fuera de los flujos que los requieren.
+        </p>
 
-      <h2>8. Derechos del usuario</h2>
-      <p>La persona usuaria puede solicitar acceso, correccion, actualizacion o eliminacion de sus datos personales escribiendo a <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a>.</p>
+        <h2>7. Conservacion de datos</h2>
+        <p>
+          Conservamos los datos por el tiempo necesario para prestar el servicio, atender soporte, resolver controversias,
+          proteger la seguridad de la plataforma y cumplir obligaciones legales o contractuales.
+        </p>
 
-      <h2>9. Menores de edad</h2>
-      <p>La aplicacion no esta dirigida a menores de edad sin supervision de un adulto responsable. Si identificamos un tratamiento indebido de datos de menores, adoptaremos medidas razonables para corregirlo.</p>
+        <h2>8. Seguridad</h2>
+        <p>
+          Aplicamos medidas tecnicas y organizativas razonables para proteger la informacion frente a acceso no autorizado,
+          perdida, alteracion o divulgacion indebida. Sin embargo, ningun sistema es completamente infalible.
+        </p>
 
-      <h2>10. Seguridad</h2>
-      <p>Aplicamos medidas razonables de seguridad para proteger la informacion. Aun asi, ningun sistema es completamente infalible.</p>
+        <h2 id="eliminacion">9. Eliminacion de cuenta y datos</h2>
+        <p>
+          La persona usuaria puede solicitar acceso, correccion, actualizacion o eliminacion de sus datos personales escribiendo a
+          <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a>.
+        </p>
+        <div class="callout">
+          <strong>Canal oficial de eliminacion:</strong>
+          <p style="margin-top: 8px;">
+            Envia la solicitud desde el correo asociado a la cuenta o incluye la informacion suficiente para identificarla.
+            El equipo revisara la solicitud y respondera conforme a la naturaleza del caso, las obligaciones legales y los periodos de retencion aplicables.
+          </p>
+        </div>
 
-      <h2>11. Cambios a esta politica</h2>
-      <p>Podemos actualizar esta Politica de Privacidad para reflejar cambios normativos, tecnicos u operativos. La version vigente sera la publicada en el canal oficial que el desarrollador disponga.</p>
+        <h2>10. Menores de edad</h2>
+        <p>
+          Open no esta dirigida a menores de edad sin supervision de un adulto responsable. Si identificamos un tratamiento improcedente,
+          adoptaremos medidas razonables para corregirlo o eliminar la informacion segun corresponda.
+        </p>
 
-      <h2>12. Contacto</h2>
-      <p>Si tienes preguntas sobre esta Politica de Privacidad o sobre el tratamiento de tus datos, puedes escribir a <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a>.</p>
+        <h2>11. Cambios a esta politica</h2>
+        <p>
+          Esta politica puede actualizarse para reflejar cambios tecnicos, operativos, regulatorios o de producto.
+          La version vigente sera la publicada en el enlace oficial asociado a la aplicacion.
+        </p>
 
-      <div class="note">
-        Esta politica esta redactada para la version publica de Open distribuida en Google Play como plataforma de catalogo comunitario y solicitudes locales.
-      </div>
+        <h2 id="contacto">12. Contacto</h2>
+        <p>
+          Para consultas sobre privacidad, soporte regulatorio, solicitudes de datos o requerimientos vinculados a la aplicacion,
+          puedes escribir a <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a>.
+        </p>
+      </article>
+
+      <aside class="sidebar">
+        <section class="sidebar-card">
+          <span class="badge">Resumen legal</span>
+          <h3>Aplicacion cubierta</h3>
+          <p>Open para iOS y Android, junto con sus servicios backend y canales oficiales de soporte.</p>
+        </section>
+        <section class="sidebar-card">
+          <span class="badge">Uso en tiendas</span>
+          <h3>Revision Apple y Google</h3>
+          <p>Esta version publica esta preparada para servir como enlace de privacidad visible en App Store Connect y Google Play Console.</p>
+        </section>
+        <section class="sidebar-card">
+          <span class="badge">Acciones rapidas</span>
+          <h3>Gestion de solicitudes</h3>
+          <p>Contacto principal: <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a></p>
+          <a class="button" href="mailto:opencorporativo1@gmail.com?subject=Solicitud%20de%20privacidad%20-%20Open">Solicitar soporte de privacidad</a>
+        </section>
+      </aside>
     </section>
   </main>
+
+  <footer class="footer shell">
+    <div class="footer-inner">
+      <span>Open · Politica publica de privacidad</span>
+      <span><a href="open_corporate_public.html">Sitio corporativo</a> · <a href="mailto:opencorporativo1@gmail.com">opencorporativo1@gmail.com</a></span>
+    </div>
+  </footer>
 </body>
 </html>
